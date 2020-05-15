@@ -1,0 +1,13 @@
+version: "3.6"
+
+services:
+  virt-manager:
+    build: .
+    container_name: virt-manager
+    environment:
+      - "DISPLAY=host.docker.internal${DISPLAY_NUMBER}"
+    volumes:
+      - "ssh-config:/root/.ssh"
+
+volumes:
+  ssh-config:
